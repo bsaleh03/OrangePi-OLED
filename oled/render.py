@@ -71,7 +71,7 @@ class canvas(object):
     def __exit__(self, type, value, traceback):
         if type is None:
             # do the drawing onto the device
-            self.device.display(self.image)
+            self.device.display(self.image.transpose(Image.FLIP_LEFT_RIGHT))
 
         del self.draw   # Tidy up the resources
         return False    # Never suppress exceptions
